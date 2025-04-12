@@ -110,4 +110,5 @@ class PlayerInfo extends Equatable {
     iplTeam,
     cricketStats,
   ];
+  //
 }

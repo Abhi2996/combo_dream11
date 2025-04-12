@@ -1,6 +1,7 @@
 import 'package:combo_dream11/src/data/model/player_info.dart';
 import 'package:combo_dream11/src/presentetion/riverpod/player_info/player_info_notifier.dart';
 import 'package:combo_dream11/src/presentetion/screens/match_entry_form/match_entry_form.dart';
+import 'package:combo_dream11/src/presentetion/screens/player_details_screen/player_Details_screen.dart';
 import 'package:combo_dream11/src/presentetion/screens/player_info_form/player_info_form.dart';
 import 'package:combo_dream11/src/test_screen/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -147,7 +148,13 @@ class PlayerListPage extends ConsumerWidget {
                             ),
                             ElevatedButton(
                               style: ButtonStyle(),
-                              onPressed: () {},
+                              onPressed: () {
+                                NavigationPaths.navigateToScreen(
+                                  context: context,
+                                  page: PlayerDetailScreen(player: player),
+                                );
+                              },
+
                               child: Text('Player Info'),
                             ),
                           ],
