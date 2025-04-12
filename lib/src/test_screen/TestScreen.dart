@@ -1,7 +1,7 @@
 // import 'package:flat_management/TestPage/SupaBase/CRUDPage.dart';
 import 'package:combo_dream11/src/presentetion/riverpod/match_entry/screens/cricket_filter_screen.dart';
+import 'package:combo_dream11/src/presentetion/screens/bottomnavigation/BottomNavigationScreen.dart';
 import 'package:combo_dream11/src/presentetion/screens/player_info_form/player_info_form.dart';
-import 'package:combo_dream11/src/presentetion/screens/player_list_screen/player_list_page.dart';
 import 'package:combo_dream11/src/test_screen/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -50,11 +50,11 @@ class TestScreen extends StatelessWidget {
               _buildStyledButton(
                 iconData: Icons.build_circle_sharp,
                 context: context,
-                label: 'PlayerListPage',
+                label: 'BottomNavigationScreen',
                 onPressed: () {
                   NavigationPaths.navigateToScreen(
                     context: context,
-                    page: PlayerListPage(),
+                    page: BottomNavigationScreen(),
                   );
                   // AppNavigator.navigateTo(
                   //     context: context,

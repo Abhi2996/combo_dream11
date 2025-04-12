@@ -61,7 +61,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
             const PlayerListPage(),
             // // Notifications page
             DashboardScreen(),
-
+            DashboardScreen(),
             // // Messages page
           ][currentPageIndex],
     );

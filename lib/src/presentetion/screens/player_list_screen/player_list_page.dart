@@ -132,14 +132,25 @@ class PlayerListPage extends ConsumerWidget {
                             );
                           },
                         ),
-                        IconButton(
-                          onPressed: () {
-                            NavigationPaths.navigateToScreen(
-                              context: context,
-                              page: AddMatchEntryScreen(playerInfo: player),
-                            );
-                          },
-                          icon: Icon(Icons.view_agenda),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            ElevatedButton(
+                              style: ButtonStyle(),
+                              onPressed: () {
+                                NavigationPaths.navigateToScreen(
+                                  context: context,
+                                  page: AddMatchEntryScreen(playerInfo: player),
+                                );
+                              },
+                              child: Text('Match entry'),
+                            ),
+                            ElevatedButton(
+                              style: ButtonStyle(),
+                              onPressed: () {},
+                              child: Text('Player Info'),
+                            ),
+                          ],
                         ),
                       ],
                     ),

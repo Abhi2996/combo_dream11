@@ -1,3 +1,4 @@
+import 'package:combo_dream11/src/data/model/career_stats.dart';
 import 'package:equatable/equatable.dart';
 import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
@@ -13,6 +14,7 @@ class PlayerInfo extends Equatable {
   final String? bowlingStyle;
   final String? internationalTeam;
   final String? iplTeam;
+  final List<CareerStats>? cricketStats;
 
   static const Uuid _uuid = Uuid();
 
@@ -27,6 +29,7 @@ class PlayerInfo extends Equatable {
     this.bowlingStyle,
     this.internationalTeam,
     this.iplTeam,
+    this.cricketStats,
   }) : id = id ?? _generateId(name);
 
   static String _generateId(String name) {
@@ -68,6 +71,12 @@ class PlayerInfo extends Equatable {
       bowlingStyle: json['bowlingStyle'],
       internationalTeam: json['internationalTeam'],
       iplTeam: json['iplTeam'],
+      cricketStats:
+          json['cricketStats'] != null
+              ? (json['cricketStats'] as List)
+                  .map((item) => CareerStats.fromJson(item))
+                  .toList()
+              : null,
     );
   }
 
@@ -83,6 +92,7 @@ class PlayerInfo extends Equatable {
       'bowlingStyle': bowlingStyle,
       'internationalTeam': internationalTeam,
       'iplTeam': iplTeam,
+      'cricketStats': cricketStats?.map((e) => e.toJson()).toList(),
     };
   }
 
@@ -98,5 +108,6 @@ class PlayerInfo extends Equatable {
     bowlingStyle,
     internationalTeam,
     iplTeam,
+    cricketStats,
   ];
 }

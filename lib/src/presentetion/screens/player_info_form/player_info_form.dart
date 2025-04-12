@@ -15,9 +15,9 @@ class AddPlayerScreen extends HookConsumerWidget {
   final PlayerInfo? playerToEdit; // Pass player data if editing
 
   const AddPlayerScreen({
-    Key? key,
+    super.key,
     this.playerToEdit, // Make it optional
-  }) : super(key: key);
+  });
 
   // This function will be called by the form when submitted successfully
   void _handlePlayerSubmit(
