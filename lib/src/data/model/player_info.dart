@@ -15,6 +15,7 @@ class PlayerInfo extends Equatable {
   final String? internationalTeam;
   final String? iplTeam;
   final List<CareerStats>? cricketStats;
+  final bool isInLineup;
 
   static const Uuid _uuid = Uuid();
 
@@ -30,6 +31,7 @@ class PlayerInfo extends Equatable {
     this.internationalTeam,
     this.iplTeam,
     this.cricketStats,
+    this.isInLineup = false, // ✅ Default to false
   }) : id = id ?? _generateId(name);
 
   static String _generateId(String name) {
@@ -77,6 +79,7 @@ class PlayerInfo extends Equatable {
                   .map((item) => CareerStats.fromJson(item))
                   .toList()
               : null,
+      isInLineup: json['isInLineup'] ?? false, // ✅ Parse or default to false
     );
   }
 
@@ -93,6 +96,7 @@ class PlayerInfo extends Equatable {
       'internationalTeam': internationalTeam,
       'iplTeam': iplTeam,
       'cricketStats': cricketStats?.map((e) => e.toJson()).toList(),
+      'isInLineup': isInLineup, // ✅ Include in JSON
     };
   }
 
@@ -109,6 +113,6 @@ class PlayerInfo extends Equatable {
     internationalTeam,
     iplTeam,
     cricketStats,
+    isInLineup, // ✅ Include in Equatable props
   ];
-  //
 }
